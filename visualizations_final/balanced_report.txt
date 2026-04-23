@@ -1,0 +1,11 @@
+                                      precision    recall  f1-score   support
+
+                      Finger tapping       0.70      0.77      0.73        39
+                                Fist       0.71      0.72      0.72        40
+                      Kinetic tremor       0.75      0.91      0.82        33
+                     Postural tremor       0.95      0.91      0.93        43
+Pronation and supination of the hand       0.99      0.94      0.96       212
+
+                            accuracy                           0.89       367
+                           macro avg       0.82      0.85      0.83       367
+                        weighted avg       0.90      0.89      0.89       367
