@@ -1,0 +1,13 @@
+graph LR
+    subgraph Input_Vectors [Parallel Branch Outputs]
+        V1["<b>Temporal Vector (128)</b><br/>Deep Motion Features<br/>(1D-CNN)"]
+        V2["<b>Contextual Vector (16)</b><br/>Clinical Metadata<br/>(Age, Gender, DBS)"]
+        V3["<b>ALAMEDA Vector (32)</b><br/>Statistical & FFT Insights<br/>(92 Features)"]
+    end
+
+    V1 & V2 & V3 --> CONCAT{<b>CONCATENATION</b><br/>Axis=1}
+
+    CONCAT --> FUSED["<b>Fused Feature Vector (176)</b><br/>Unified Tremor Representation"]
+
+    FUSED --> FC[Fully Connected Layers]
+    FC --> SOFT["<b>Final Prediction</b><br/>(Softmax 97.5%)"]
